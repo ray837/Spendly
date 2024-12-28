@@ -109,7 +109,7 @@ export default function Budget() {
       <TouchableOpacity style={styles.button} >
         <Text style={styles.buttonText}>Save</Text>
       </TouchableOpacity>
-      <ProgressBar progress={3} goal={10}></ProgressBar>
+      {/* <ProgressBar progress={3} goal={10}></ProgressBar> */}
     </ParallaxScrollView>
   );
 }

@@ -16,6 +16,7 @@ const MAPPING = {
   'chevron.right': 'chevron-right',
   'autograph':'auto-graph',
   'circle':'circle',
+  'fastfood':'fastfood',
   'history-edu':'history-edu'
 } as Partial<
   Record<

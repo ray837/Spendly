@@ -87,8 +87,18 @@ class ProgressBar extends Component<ProgressBarProps> {
     }
   }
 
+  getProgressColor(progress: number, goal: number): string {
+    if (goal === 0) return '#FF4500'; // Red for invalid goal
+    const ratio = progress / goal;
+    if (ratio < 0.5) return '#FF4500'; // Red for less than 50%
+    if (ratio < 0.75) return '#FFD700'; // Yellow for less than 75%
+    return '#32CD32'; // Green for >= 75%
+  }
+
   render() {
     const { progress, goal } = this.props;
+    
+    const progressColor = this.getProgressColor(progress, goal);
     return (
         <View style={[
             styles.progressholder,
@@ -97,7 +107,7 @@ class ProgressBar extends Component<ProgressBarProps> {
       <View
         style={[
           styles.progressBar,
-          { width: this.calculateProgress(progress, goal) },
+          { width: this.calculateProgress(progress, goal), backgroundColor: progressColor, },
         ]}
       />
       </View>
